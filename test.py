@@ -19,13 +19,13 @@ def getnowtime():
     return mstime
 #引入库
 num = 0
-cap = cv2.VideoCapture(-1)
+cap = cv2.VideoCapture(0)
 while True:
     ret, frame = cap.read()
     cv2.imshow("Video", frame)
     savename=str(getnowtime())+'.jpg'
     cv2.imwrite(savename,frame)
-    cv2.waitKey(1000/33)
+    cv2.waitKey(33)
     num = num +1
 #读取内容
     if cv2.waitKey(10) == ord("e"):
